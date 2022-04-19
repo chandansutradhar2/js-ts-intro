@@ -1,3 +1,11 @@
+function testFunction() {
+	//function declaration
+	//called as fucntion because they don't belong to any class
+	alert("test function called");
+}
+
+testFunction(); //function invocation
+
 function isLoggedIn() {
 	//todo: check user session
 	if (false) {
