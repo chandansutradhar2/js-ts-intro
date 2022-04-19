@@ -1,4 +1,5 @@
 //functional programing
+document.getElementById("demo").style.backgroundColor = "yellow";
 
 function fun1() {
 	console.log("function 1 invoked");
