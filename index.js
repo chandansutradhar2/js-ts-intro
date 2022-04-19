@@ -1,7 +1,7 @@
 function testFunction() {
 	//function declaration
 	//called as fucntion because they don't belong to any class
-	alert("test function called");
+	//alert("test function called");
 }
 
 testFunction(); //function invocation
@@ -16,6 +16,7 @@ function isLoggedIn() {
 }
 function changeContent() {
 	document.getElementById("demo").innerHTML = "Hello JavaScript + TypeScript";
+	//document.write("Written using JS");
 }
 
 function toggleBackground() {
