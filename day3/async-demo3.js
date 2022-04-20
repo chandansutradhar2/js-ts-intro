@@ -2,8 +2,8 @@ function fun1() {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {
 			console.log("fun 1");
-			resolve();
-		}, 5000);
+			resolve(10);
+		}, 1000);
 	});
 }
 
@@ -40,17 +40,16 @@ function fun5() {
 function fun6() {
 	console.log("fun 6");
 }
-function caller() {
-	fun1().then(() => {
-		fun2().then(() => {
-			fun3().then(() => {
-				fun4().then(() => {
-					fun5();
-					fun6();
-				});
-			});
-		});
-	});
+
+async function caller() {
+	let result = await fun1();
+	console.log(result);
+	await fun2();
+	await fun3();
+	await fun4();
+	fun5();
+	fun6();
+	console.log("last line");
 }
 
 caller();
