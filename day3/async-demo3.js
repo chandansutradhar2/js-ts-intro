@@ -8,7 +8,12 @@ function fun1() {
 }
 
 function fun2() {
-	console.log("fun 2");
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			console.log("fun 2");
+			resolve();
+		}, 2000);
+	});
 }
 
 function fun3() {
@@ -21,17 +26,31 @@ function fun3() {
 }
 
 function fun4() {
-	console.log("fun 4");
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			console.log("fun 4");
+			resolve();
+		}, 2000);
+	});
 }
 
-// fun1().then(() => {
-// 	fun2();
-// 	fun3().then(() => {
-// 		fun4();
-// 	});
-// });
+function fun5() {
+	console.log("fun 5");
+}
+function fun6() {
+	console.log("fun 6");
+}
+function caller() {
+	fun1().then(() => {
+		fun2().then(() => {
+			fun3().then(() => {
+				fun4().then(() => {
+					fun5();
+					fun6();
+				});
+			});
+		});
+	});
+}
 
-fun1();
-fun2();
-fun3();
-fun4();
+caller();
