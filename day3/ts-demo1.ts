@@ -22,10 +22,10 @@ interface Customer {
 interface Product {
 	id: string;
 	name: string;
-	description: string;
+	description?: string;
 	price: number;
 	isDiscount: boolean;
-	expiryDate: Date;
+	expiryDate?: Date;
 }
 
 class Order {}
@@ -67,12 +67,12 @@ class ECOMApp {
 		// );
 		const productObj: Product = {
 			description: "",
-			expiryDate: new Date(),
 			id: "",
 			isDiscount: true,
 			name: "",
 			price: 73632,
 		};
+
 		productObj.id = "p001";
 	}
 }
